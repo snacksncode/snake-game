@@ -1,0 +1,11 @@
+{
+  "name": "snake-game",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/snacksncode/snake-game.git",
+  "author": "snacksncode <snacksncode@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "watch-sass": "sass --watch src/styles/scss:src/styles/css"
+  }
+}

@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+html {
+  --bg_400: #222222;
+  --bg_350: #313131;
+  --bg_300: #3f3f3f;
+  --txt: #f4f4f4;
+  --red: #f25c54;
+  --blue: #59a5d8;
+  --green: #95d5b2;
+  --yellow: #ffd500;
+  --fs-sm: 0.8rem;
+  --fs-md: 1.25rem;
+  --fs-lg: 2.5rem;
+  --border-radius: 4px;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg_400);
+  color: var(--txt);
+  font-family: "Poppins", sans-serif;
+}
+
+.intro__wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.intro__heading {
+  font-size: var(--fs-lg);
+}
+
+.how-to-play__wrapper {
+  min-width: min(500px, 80%);
+  padding: 2.5rem 1.25rem 1.25rem;
+  border: 2px solid var(--bg_300);
+  border-radius: var(--border-radius);
+  position: relative;
+  margin: 2rem 0;
+}
+.how-to-play__heading {
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  text-align: center;
+  margin-top: 0;
+  position: absolute;
+  border-radius: var(--border-radius);
+  padding: 0.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg_350);
+  width: auto;
+  left: 50%;
+  transform: translateX(-50%) translateY(calc(-2.5rem - 50%));
+}
+.how-to-play__heading > i {
+  position: absolute;
+  top: -75%;
+  left: 50%;
+  font-size: var(--fs-md);
+}
+.how-to-play__controls-wrapper {
+  --gap-between-items: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+.how-to-play__controls-wrapper__item {
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--border-radius);
+  background: var(--bg_350);
+  width: calc(50% - var(--gap-between-items) / 2);
+}
+.how-to-play__controls-wrapper__item:nth-child(2), .how-to-play__controls-wrapper__item:nth-child(4) {
+  margin-left: var(--gap-between-items);
+}
+.how-to-play__controls-wrapper__item:nth-child(2) ~ .how-to-play__controls-wrapper__item {
+  margin-top: var(--gap-between-items);
+}
+.how-to-play__controls-wrapper__item__icon {
+  text-align: center;
+  font-size: 64px;
+}
+.how-to-play__controls-wrapper__item__description {
+  flex: 1;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 75%;
+  margin: 0 auto;
+}
+.how-to-play__controls-wrapper .control-up,
+.how-to-play__controls-wrapper .control-left,
+.how-to-play__controls-wrapper .control-down,
+.how-to-play__controls-wrapper .control-right {
+  font-weight: 700;
+}
+
+.clr-red {
+  color: var(--red);
+}
+.clr-blue {
+  color: var(--blue);
+}
+.clr-green {
+  color: var(--green);
+}
+.clr-yellow {
+  color: var(--yellow);
+}
+.clr-red, .clr-blue, .clr-green, .clr-yellow {
+  font-weight: 700;
+}
+
+/*# sourceMappingURL=main.css.map */
