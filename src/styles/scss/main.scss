@@ -12,6 +12,51 @@
   &__heading {
     font-size: var(--fs-lg);
   }
+  &__button {
+    --clr: var(--blue);
+    --bs: 2px;
+    --easing: cubic-bezier(0.83, 0, 0.17, 1);
+    padding: 0.5rem 1.5rem;
+    font-weight: 700;
+    border-radius: var(--border-radius);
+    border: var(--bs) solid var(--clr);
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    z-index: 1;
+    transition: border-color 450ms var(--easing);
+    &::after {
+      position: absolute;
+      content: "";
+      top: 50%;
+      left: 50%;
+      width: calc(100% + 2 * var(--bs));
+      height: calc(100% + 2 * var(--bs));
+      transform: translate(-50%, -50%) scale(0.5);
+      opacity: 0;
+      border-radius: var(--border-radius);
+      background: var(--clr);
+      z-index: -1;
+      transition: opacity 450ms, transform 450ms;
+      transition-timing-function: var(--easing);
+    }
+    &:active,
+    &:focus {
+      outline: none;
+    }
+    &:focus-visible {
+      outline: 2px dashed var(--clr);
+      outline-offset: 1rem;
+    }
+    &:hover,
+    &:focus-visible {
+      border-color: transparent;
+      &::after {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+      }
+    }
+  }
 }
 .how-to-play {
   &__wrapper {
@@ -21,6 +66,7 @@
     border-radius: var(--border-radius);
     position: relative;
     margin: 2rem 0;
+    user-select: none;
   }
   &__heading {
     font-size: var(--fs-sm);

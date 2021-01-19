@@ -43,6 +43,49 @@ body {
 .intro__heading {
   font-size: var(--fs-lg);
 }
+.intro__button {
+  --clr: var(--blue);
+  --bs: 2px;
+  --easing: cubic-bezier(0.83, 0, 0.17, 1);
+  padding: 0.5rem 1.5rem;
+  font-weight: 700;
+  border-radius: var(--border-radius);
+  border: var(--bs) solid var(--clr);
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  z-index: 1;
+  transition: border-color 450ms var(--easing);
+}
+.intro__button::after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  width: calc(100% + 2 * var(--bs));
+  height: calc(100% + 2 * var(--bs));
+  transform: translate(-50%, -50%) scale(0.5);
+  opacity: 0;
+  border-radius: var(--border-radius);
+  background: var(--clr);
+  z-index: -1;
+  transition: opacity 450ms, transform 450ms;
+  transition-timing-function: var(--easing);
+}
+.intro__button:active, .intro__button:focus {
+  outline: none;
+}
+.intro__button:focus-visible {
+  outline: 2px dashed var(--clr);
+  outline-offset: 1rem;
+}
+.intro__button:hover, .intro__button:focus-visible {
+  border-color: transparent;
+}
+.intro__button:hover::after, .intro__button:focus-visible::after {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
 
 .how-to-play__wrapper {
   min-width: min(500px, 80%);
@@ -51,6 +94,7 @@ body {
   border-radius: var(--border-radius);
   position: relative;
   margin: 2rem 0;
+  user-select: none;
 }
 .how-to-play__heading {
   font-size: var(--fs-sm);
