@@ -3,24 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles/css/main.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
     />
+    <script src="dist/bundle.js" defer></script>
     <title>Snake the Game</title>
   </head>
   <body>
-    <div class="intro__wrapper">
-      <h1 class="intro__heading">Welcome to <span class="clr-blue">Snake the Game</span></h1>
-      <div class="how-to-play__wrapper">
+    <div class="intro">
+      <h1 class="intro__heading">
+        Welcome to
+        <div class="clr-blue">Snake the Game</div>
+      </h1>
+      <div class="how-to-play">
         <p class="how-to-play__heading">How to play</p>
-        <div class="how-to-play__controls-wrapper">
-          <div class="how-to-play__controls-wrapper__item">
-            <div class="how-to-play__controls-wrapper__item__icon">
+        <div class="controls">
+          <div class="item">
+            <div class="item__icon">
               <i class="fas fa-gamepad"></i>
             </div>
-            <div class="how-to-play__controls-wrapper__item__description">
+            <div class="item__description">
               <span>
                 <span>
                   <span class="clr-red">W</span>
@@ -39,30 +42,30 @@
               to control the snake
             </div>
           </div>
-          <div class="how-to-play__controls-wrapper__item">
-            <div class="how-to-play__controls-wrapper__item__icon">
+          <div class="item">
+            <div class="item__icon">
               <i class="fas fa-star"></i>
             </div>
-            <div class="how-to-play__controls-wrapper__item__description">
+            <div class="item__description">
               <span
                 >Collect <span class="clr-green">apples</span> to increase
                 <span class="clr-green">score</span></span
               >
             </div>
           </div>
-          <div class="how-to-play__controls-wrapper__item">
-            <div class="how-to-play__controls-wrapper__item__icon">
+          <div class="item">
+            <div class="item__icon">
               <i class="fas fa-pause"></i>
             </div>
-            <div class="how-to-play__controls-wrapper__item__description">
+            <div class="item__description">
               <span>You can pause by pressing <span class="clr-blue">ESC</span></span>
             </div>
           </div>
-          <div class="how-to-play__controls-wrapper__item">
-            <div class="how-to-play__controls-wrapper__item__icon">
+          <div class="item">
+            <div class="item__icon">
               <i class="fas fa-skull-crossbones"></i>
             </div>
-            <div class="how-to-play__controls-wrapper__item__description">
+            <div class="item__description">
               <span>If you'll hit a wall you'll <span class="clr-red">die</span></span>
             </div>
           </div>
