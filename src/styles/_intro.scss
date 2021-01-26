@@ -1,0 +1,181 @@
+.intro {
+  position: absolute;
+  width: 100%;
+  min-height: 100%;
+  height: auto;
+  display: flex;
+  padding: 1rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  z-index: 2;
+  &__heading {
+    font-size: var(--fs-lg);
+    text-align: center;
+  }
+  &__button {
+    --clr: var(--blue);
+    --bs: 2px;
+    --easing: cubic-bezier(0.83, 0, 0.17, 1);
+    padding: 0.5rem 1.5rem;
+    font-weight: 700;
+    border-radius: var(--border-radius);
+    border: var(--bs) solid var(--clr);
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    z-index: 1;
+    transition: border-color 450ms var(--easing);
+    &::after {
+      position: absolute;
+      content: "";
+      top: 50%;
+      left: 50%;
+      width: calc(100% + 2 * var(--bs));
+      height: calc(100% + 2 * var(--bs));
+      transform: translate(-50%, -50%) scale(0.5);
+      opacity: 0;
+      border-radius: var(--border-radius);
+      background: var(--clr);
+      z-index: -1;
+      transition: opacity 450ms, transform 450ms;
+      transition-timing-function: var(--easing);
+    }
+    &:active,
+    &:focus {
+      outline: none;
+    }
+    &:focus-visible {
+      outline: 2px dashed var(--clr);
+      outline-offset: 1rem;
+    }
+    &:hover,
+    &:focus-visible {
+      border-color: transparent;
+      &::after {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+      }
+    }
+  }
+  .how-to-play {
+    width: 100%;
+    max-width: 750px;
+    padding: 2.5rem 1.25rem 1.25rem;
+    border: 2px solid var(--bg_300);
+    border-radius: var(--border-radius);
+    position: relative;
+    margin: 2rem 0;
+    user-select: none;
+    &__heading {
+      font-size: var(--fs-sm);
+      font-weight: 700;
+      text-align: center;
+      margin-top: 0;
+      position: absolute;
+      border-radius: var(--border-radius);
+      padding: 0.5rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      background: var(--bg_350);
+      width: auto;
+      left: 50%;
+      transform: translateX(-50%) translateY(calc(-2.5rem - 50%));
+      > i {
+        position: absolute;
+        top: -75%;
+        left: 50%;
+        font-size: var(--fs-md);
+      }
+    }
+    .controls {
+      --gap-between-items: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .item {
+        padding: 0.75rem;
+        display: flex;
+        flex-direction: column;
+        border-radius: var(--border-radius);
+        background: var(--bg_350);
+        width: 100%;
+        height: auto;
+        & + .item {
+          margin-top: var(--gap-between-items);
+        }
+        &__icon {
+          text-align: center;
+          font-size: 48px;
+        }
+        &__description {
+          flex: 1;
+          display: flex;
+          text-align: center;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          max-width: 75%;
+          margin: 0 auto;
+        }
+      }
+      .control-up,
+      .control-left,
+      .control-down,
+      .control-right {
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .intro {
+    .how-to-play {
+      .controls {
+        flex-wrap: wrap;
+        flex-direction: row !important;
+        align-items: stretch;
+        .item {
+          width: calc(50% - var(--gap-between-items) / 2) !important;
+          & + .item {
+            margin-top: 0;
+          }
+          &:nth-of-type(2),
+          &:nth-of-type(4) {
+            margin-left: var(--gap-between-items);
+          }
+          &:nth-of-type(2) ~ .item {
+            margin-top: var(--gap-between-items);
+          }
+          &__icon {
+            font-size: 64px;
+          }
+        }
+      }
+    }
+  }
+}
+
+//styles to put colors on text
+.clr {
+  &-red {
+    color: var(--red);
+  }
+  &-blue {
+    color: var(--blue);
+  }
+  &-green {
+    color: var(--green);
+  }
+  &-yellow {
+    color: var(--yellow);
+  }
+  &-red,
+  &-blue,
+  &-green,
+  &-yellow {
+    font-weight: 700;
+  }
+}
